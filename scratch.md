@@ -14,7 +14,7 @@ export AWS_SECRET_ACCESS_KEY=mySecret
 
 ```
 
-jx create cluster eks --cluster-name=dimicloud --domain=dimicloud.co.uk --skip-installation=true --region us-east-1 --node-type t2.micro --node-volume-size 10 --static-jenkins --tags CreatedBy=JenkinsX 
+jx create cluster eks --cluster-name=dimicloud --domain=dimicloud.co.uk --region us-east-1 --node-type t2.micro --node-volume-size 10 --static-jenkins --tags CreatedBy=JenkinsX  
 
 jx update cluster eks --cluster-name=dimicloud --skip-installation=true --region us-east-1 --node-type t2.nano --node-volume-size 10 --tags CreatedBy=JenkinsX
 
@@ -28,3 +28,5 @@ export AWS_REGION=us-east-1
 
 https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_Jenkins-X-EKS.php
 ```
+
+
