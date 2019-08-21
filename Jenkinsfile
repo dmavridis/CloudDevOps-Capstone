@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Upload Docker to ECR') {
             steps {
-                sh 'echo "Building docker image"'
+                sh 'echo "Building docker image "'
                 script{
                     docker.build('dimi-app')
                 }
