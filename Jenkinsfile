@@ -6,10 +6,11 @@ pipeline {
                 sh 'tidy -q -e *.html'
             }
         }
-        stage('Upload to AWS') {
+        stage('Upload Docker to ECR') {
             steps {
-//                withAWS(region:'us-east-1', credentials:'aws-static') {
-//                    s3Upload(file:'index.html', bucket:'jenkinspipelines082019', )
+                docker.build('dimi-app')
+                docker.withRegistry('929444784092.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:dimi-nginx') {
+                    docker.image('dimi-app').push('latest')
                 }
             }
         }
