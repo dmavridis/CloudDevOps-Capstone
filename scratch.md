@@ -34,4 +34,5 @@ https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_Jenkins-X-EKS.php
 https://foxutech.com/setup-jenkins-with-amazon-elastic-container-registry/
 https://blog.mikesir87.io/2016/04/pushing-to-ecr-using-jenkins-pipeline-plugin/
 
-
+sudo usermod -a -G docker $USER
+sudo chmod 666 /var/run/docker.sock
