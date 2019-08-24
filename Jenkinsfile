@@ -17,5 +17,15 @@ pipeline {
                 }
             }
         }
+        stage('Remove current cluster from EKS'){
+            steps{
+                sh 'kubectl delete deployment.apps/dimicloud'
+            }
+        }
+        stage('Deploy image to EKS'){
+            steps{
+                sh 'kubectl apply -f deployment.yaml'
+            }
+        }       
     }
 }
