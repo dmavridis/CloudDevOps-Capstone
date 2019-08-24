@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: dimicloud
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+  	matchLabels:
+    	run: dimicloud
+	template:
+  	metadata:
+    	labels:
+      	run: dimicloud
+    spec:
+    	containers:
+      - image: 929444784092.dkr.ecr.us-east-1.amazonaws.com/dimi-nginx:latest
+        name: dimicloud
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
