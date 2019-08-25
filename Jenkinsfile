@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Remove current cluster from EKS'){
             steps{
-                withKubeConfig([credentialsId: 'jenkins@dimicloud.us-east-1.eksctl.io', serverUrl:' https://9705639DB1B9054B46FD3B8A1FCA64EB.yl4.us-east-1.eks.amazonaws.com']){
+                withKubeConfig([credentialsId: '929444784092', serverUrl:' https://9705639DB1B9054B46FD3B8A1FCA64EB.yl4.us-east-1.eks.amazonaws.com']){
                     sh 'kubectl delete deployment.apps/dimicloud'
                 }
             }
